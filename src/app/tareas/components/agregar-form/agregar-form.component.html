@@ -1,0 +1,27 @@
+<form [formGroup]="myForm" (submit)="enviarFormulario()"
+      class="w-96 h-72 bg-white text-gray-600 flex flex-col p-4 shadow-md">
+
+  <h1 class="text-center text-2xl mb-2">Agregar tarea</h1>
+
+  <div class="mb-2">
+    <input type="text" formControlName="text"
+           class="border-gray-600 border rounded focus:outline-none p-2 w-full"
+           [ngClass]="{'border-red-500': text?.hasError('required') && text?.touched}"
+           placeholder="Ingrese el nombre de la tarea">
+    <span *ngIf="text?.hasError('required') && text?.touched" class="text-red-600 bold">Campo Requerido</span>
+  </div>
+
+  <div class="mb-2">
+    <input type="datetime-local" formControlName="fecha"
+           [ngClass]="{'border-red-500': text?.hasError('required') && text?.touched}"
+           class="border-gray-600 border rounded focus:outline-none p-2 w-full"
+           placeholder="Ingrese la fecha">
+    <span *ngIf="text?.hasError('required') && text?.touched" class="text-red-600 bold">Campo Requerido</span>
+  </div>
+
+  <div class="flex gap-3 justify-end mt-4">
+    <button class="p-2 w-16 rounded border-gray-500 border text-black">Añadir</button>
+    <button (click)="cancelarFomulario()" class="p-2 w-20 rounded border-red-500 border text-red-500">Cancelar</button>
+  </div>
+
+</form>

@@ -1,0 +1,17 @@
+<h1 class="text-center mb-4 uppercase text-indigo-800 text-bold">Lista de Tareas</h1>
+<div class="flex justify-between w-full bg-indigo-600 items-center rounded-md text-white p-3 mb-2"
+     *ngFor="let item of todos">
+
+  <p (click)="completedTodo(item.text)" [ngClass]="{'complete': item.completed}">
+    {{item?.text | titlecase}}
+  </p>
+  <div>
+    <button (click)="eliminarTodo(item.text)" mat-icon-button>
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button (click)="openUpdate(item)" mat-icon-button>
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
+
+</div>

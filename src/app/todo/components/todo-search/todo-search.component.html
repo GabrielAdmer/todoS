@@ -1,0 +1,5 @@
+<mat-form-field class="w-full mt-3">
+  <mat-label>Buscar Tarea</mat-label>
+  <input autocomplete="off" matInput type="text" placeholder="Buscar Todo" [formControl]="searchTodo">
+  <mat-error *ngIf="searchTodo.hasError('required') && searchTodo.touched">Required para buscar</mat-error>
+</mat-form-field>

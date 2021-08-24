@@ -1,0 +1,22 @@
+<div class="mt-4">
+  <article *ngFor="let tarea of tareas" class="bg-gray-900 mt-1">
+    <div class="shadow p-4 w-full flex justify-between items-center">
+      <div class="flex" [ngClass]="{'complete': tarea.completed}">
+        <p class="mr-3">{{tarea.text}}</p>
+        <p>{{tarea.fecha | date:'short'}}</p>
+      </div>
+      <div class="flex">
+        <button (click)="eliminar(tarea.id!)">
+          <mat-icon class="text-red-500">delete</mat-icon>
+        </button>
+        <button (click)="showUpdateForm(tarea)">
+          <mat-icon class="text-blue-500">edit</mat-icon>
+        </button>
+        <button (click)="complete(tarea.id!)">
+          <mat-icon [ngClass]="{'text-green-500': tarea.completed,'text-red-500':!tarea.completed}">check</mat-icon>
+        </button>
+      </div>
+    </div>
+  </article>
+
+</div>

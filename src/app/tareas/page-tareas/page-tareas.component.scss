@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(190, 184, 184);
+  align-items: center;
+  height: calc(100vh - 64px);
+}
+
+.todo-container {
+  width: 500px;
+  min-height: 600px;
+}
+
+.bg-container {
+  background-color: #012a4a;
+}

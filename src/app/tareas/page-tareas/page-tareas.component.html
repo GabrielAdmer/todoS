@@ -1,0 +1,16 @@
+<div class="todo-container shadow-md bg-gray-800 rounded p-4 text-white">
+
+  <app-header-tarea></app-header-tarea>
+
+  <app-buscar-tarea></app-buscar-tarea>
+
+  <h1 class="text-center text-2xl bold mt-4 ">Lista de tareas</h1>
+
+  <app-agregar-form *ngIf="show"></app-agregar-form>
+  <app-update-tareas *ngIf="showUpdate"></app-update-tareas>
+
+  <app-list-tareas></app-list-tareas>
+
+  <app-button-agregar class="absolute top-24 right-8"></app-button-agregar>
+
+</div>

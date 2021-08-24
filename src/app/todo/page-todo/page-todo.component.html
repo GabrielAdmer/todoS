@@ -1,0 +1,19 @@
+<mat-card class="todo-container bg-white relative">
+  <app-todo-counter></app-todo-counter>
+
+  <app-todo-search></app-todo-search>
+
+  <div class="text-center text-2xl text-red-600 uppercase font-bold" *ngIf="todo.length === 0;else todos">
+    No hay todos
+  </div>
+
+  <ng-template #todos>
+    <app-todo-list></app-todo-list>
+  </ng-template>
+
+
+  <app-create-button (onOpen)="openDialogCreate()"></app-create-button>
+</mat-card>
+
+
+<!-- <button mat-flat-button color="primary">Enviar</button> -->

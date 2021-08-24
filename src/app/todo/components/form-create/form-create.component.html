@@ -1,0 +1,16 @@
+<div class="text-center" mat-dialog-title>
+  Add todo
+</div>
+
+<div mat-dialog-content>
+  <mat-form-field class="w-full">
+    <mat-label>Name Todo</mat-label>
+    <input matInput type="text" placeholder="Ingrese su todo" [formControl]="todo">
+    <mat-error *ngIf="todo.hasError('required') && todo.touched">Required para buscar</mat-error>
+    <mat-error *ngIf="todo.hasError('minlength') && todo.touched">Minimo 3 caracteres</mat-error>
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions (click)="createTodo()">
+  <button mat-stroked-button class="text-indigo-600">Add</button>
+</div>

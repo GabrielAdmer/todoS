@@ -1,0 +1,14 @@
+<div class="text-center" mat-dialog-title>
+  Add todo
+</div>
+
+<div mat-dialog-content>
+  <mat-form-field class="w-full">
+    <mat-label>Name Todo</mat-label>
+    <input matInput type="text" placeholder="Ingrese su todo" [formControl]="todo">
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-stroked-button (click)="upadteTodo()" class="text-indigo-600">Edite</button>
+</div>

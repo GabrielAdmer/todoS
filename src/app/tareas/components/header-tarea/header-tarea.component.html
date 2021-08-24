@@ -1,0 +1,8 @@
+<div class="text-center bg-gray-900 rounded text-white shadow-md p-4 mb-3">Tareas completadas {{tareas | completed}} de
+  {{tareas.length}}</div>
+
+<div class="text-center shadow-md p-4 mb-3 flex justify-center bg-gray-900 rounded text-white">
+  <p class="mr-3 cursor-pointer" (click)="completadas()">Completadas</p>
+  <p class="mr-3 cursor-pointer" (click)="all()">Todos</p>
+  <p class="cursor-pointer" (click)="incompletas()">Incompletas</p>
+</div>
