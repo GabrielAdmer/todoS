@@ -8,6 +8,8 @@ const routes: Routes = [
     children: [
       { path: "todo", loadChildren: () => import( "./todo/todo.module" ).then( m => m.TodoModule ) },
       { path: "tareas", loadChildren: () => import( "./tareas/tareas.module" ).then( m => m.TareasModule ) },
+      { path: "bandas", loadChildren: () => import( "./bandas/bandas.module" ).then( m => m.BandasModule ) },
+      { path: "practica", loadChildren: () => import( "./practica/practica.module" ).then( m => m.PracticaModule ) },
       { path: "**", redirectTo: "tareas" }
     ]
   }

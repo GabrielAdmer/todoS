@@ -1,0 +1,20 @@
+<article #photo>
+
+  <div *ngIf="!showPhot ; else image">
+
+  </div>
+
+  <ng-template #image>
+    <a href="/detail/{{id}}">
+      <div class="img-wrapper">
+        <img [src]="src" alt="">
+      </div>
+    </a>
+
+    <button>
+      <mat-icon>favorite_border</mat-icon>
+      {{like}} likes!!
+    </button>
+  </ng-template>
+
+</article>

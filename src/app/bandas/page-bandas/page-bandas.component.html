@@ -1,0 +1,14 @@
+<div class="container m-auto">
+  <div class="text-center p-4 border border-gray-600 rounded-sm ">
+    <p>
+      Status service:
+      <span *ngIf="online" class="text-green-500">Online</span>
+      <span *ngIf="!online" class="text-red-500">Offline</span>
+    </p>
+  </div>
+</div>
+
+<div class="container m-auto">
+  <app-list></app-list>
+  <app-band-add></app-band-add>
+</div>

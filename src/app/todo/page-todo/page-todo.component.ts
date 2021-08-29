@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Todo } from 'src/app/models/todo.interface';
 import { TodoService } from '../../core/todo.service';
 import { FormCreateComponent } from '../components/form-create/form-create.component';
+import { BandasService } from '../../core/bandas.service';
 
 @Component( {
   selector: 'app-page-todo',
@@ -18,7 +19,7 @@ export class PageTodoComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog,
-    private todoService: TodoService
+    private todoService: TodoService,
   ) { }
 
   ngOnInit(): void {

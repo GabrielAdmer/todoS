@@ -3,13 +3,31 @@ import { Subscription } from 'rxjs';
 import { Tarea } from '../../../models/tarea.interface';
 import { TareaService } from '../../../core/tarea.service';
 import { ShowFormService } from '../../../core/show-form.service';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component( {
   selector: 'app-list-tareas',
   templateUrl: './list-tareas.component.html',
-  styleUrls: [ './list-tareas.component.scss' ]
+  styleUrls: [ './list-tareas.component.scss' ],
+  animations: [
+    trigger( 'contenidoAnimable', [
+      state( 'initial', style( {
+        opacity: 1,
+        transform: 'rotate3d(0,0,0,0deg)'
+      } ) ),
+      state( 'final', style( {
+        opacity: 0,
+        visibility: 'hidden',
+        transform: 'rotate3d(5,10,20,30deg)'
+      } ) ),
+      transition( 'initial => final', animate( 1000 ) ),
+      transition( 'final => inicial', animate( 1000 ) ),
+    ] )
+  ]
 } )
 export class ListTareasComponent implements OnInit, OnDestroy {
+
+  state = 'initial';
 
   private suscription = new Subscription();
 
@@ -33,6 +51,7 @@ export class ListTareasComponent implements OnInit, OnDestroy {
   }
 
   eliminar( index: string ) {
+    this.state = 'final';
     this.tareaService.eliminarTodo( index );
   }
 

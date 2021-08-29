@@ -1,0 +1,5 @@
+<ul [ngClass]="{'fixed': showFixed}">
+  <li *ngFor="let category of categories">
+    <app-category [cover]="category.cover" [emoji]="category.emoji" [path]="category.path"></app-category>
+  </li>
+</ul>

@@ -1,0 +1,28 @@
+ul {
+  display: flex;
+  overflow: scroll;
+  overflow-y: hidden;
+  width: 100%;
+
+  &.fixed {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: -20px;
+    z-index: 3;
+    max-width: 400px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 60px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+    transition: 0.5s transform ease;
+    transform: scale(0.5);
+  }
+}
+
+li {
+  padding: 0 8px;
+}

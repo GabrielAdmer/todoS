@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { AppRoutingModule } from './app-routing.module';
 
+import { SocketIoModule } from 'ngx-socket-io';
+
 @NgModule( {
   declarations: [
     AppComponent
@@ -14,7 +16,8 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    SocketIoModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]

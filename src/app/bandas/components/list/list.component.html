@@ -1,0 +1,30 @@
+<div *ngIf="band.length === 0;else bandas">
+  Cargando
+</div>
+
+
+<ng-template #bandas>
+
+  <div class="container m-auto">
+
+
+    <table class="table-auto ">
+      <tr class="bg-green-500" *ngFor="let item of band">
+        <td>
+          <button (click)="votar(item.id)">+1</button>
+        </td>
+        <td>
+          <input type="text" [value]="item.name" (change)="udate($event,item.id)">
+        </td>
+        <td>
+          <h3>{{ item.votes }}</h3>
+        </td>
+        <td>
+          <button (click)="eliminar(item.id)">Eliminar</button>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+</ng-template>
